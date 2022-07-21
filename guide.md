@@ -3,7 +3,7 @@ chance to access the chunk-only producer. Stake Wars offers rewards that support
 from the end of September 2022.
 
 
-# How to run Validator Node for Shardnet on contabo Platform (Stake Wars: Episode III step-by-step instructions)
+# How to run Validator Node for Shardnet on Contabo Platform (Stake Wars: Episode III step-by-step instructions)
 
 
 
