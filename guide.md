@@ -589,4 +589,6 @@ cat home/<USER_ID>/logs/all.log
 * Ping is done periodically to network. (Every 5 minutes)
 
 
-
+## Please refer to Near discord to get lasted update
+Link discord: https://discord.gg/WuZMKfuE
+Will update here guide if there is anyupdate Challenge
