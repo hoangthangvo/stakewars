@@ -4,8 +4,10 @@ from the end of September 2022.
 
 
 # How to run Validator Node for Shardnet on Contabo Platform (Stake Wars: Episode III step-by-step instructions)
-
-
+This guide may have some step same as orginal guide from near stakewars-iii
+Orginal guide: https://github.com/near/stakewars-iii/tree/main/challenges
+Near stakewars: https://near.org/stakewars/
+Discord : https://discord.gg/7TercRzRgA
 
 ## 1. Create Shardnet wallet, setup Google Cloud instance & deploy NEAR CLI (Challenge 001)
 
