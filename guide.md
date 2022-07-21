@@ -534,7 +534,10 @@ curl -s -d '{"jsonrpc": "2.0", "method": "validators", "id": "dontcare", "params
 ## Steps
 
 Create a new file on /home/<USER_ID>/scripts/ping.sh
-
+```
+mkdir scripts
+cd scripts
+```
 ```
 #!/bin/sh
 # Ping call to renew Proposal added to crontab
@@ -552,6 +555,8 @@ near validators current | grep $POOLID >> $LOGS/all.log
 near validators next | grep $POOLID >> $LOGS/all.log
 
 ```
+For save please press Ctrl + O then enter and Ctrl + X for exit
+
 Create a new crontab, running every 5 minutes:
 
 ```
@@ -563,7 +568,15 @@ List crontab to see it is running:
 ```
 crontab -l
 ```
+If you don't have file all.log yo need to create one.
 
+```
+mkdir logs
+cd logs
+```
+```
+nano all.log
+```
 Review your logs 
 
 ```
