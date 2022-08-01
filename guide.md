@@ -569,8 +569,10 @@ Create a new crontab, running every 5 minutes:
 
 ```
 crontab -e
-*/5 * * * * sh /home/<USER_ID>/scripts/ping.sh
+0 */2 * * * sh /home/<USER_ID>/scripts/ping.sh
 ```
+![image](https://user-images.githubusercontent.com/28772660/181905704-7bada2f2-dfeb-4454-99ba-82821ed9c785.png)
+
 
 List crontab to see it is running:
 ```
@@ -598,5 +600,64 @@ cat home/<USER_ID>/logs/all.log
 ## Please refer to Near discord to get lasted update
 
 Link discord: https://discord.gg/WuZMKfuE
+
+
+## challenge 7
+
+
+
+
+
+## challenge 8
+
+## Steps
+
+Install cargo and Rust in case you don't have it. This command is for Linux or MacOS.
+
+```
+curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+
+source $HOME/.cargo/env
+```
+
+Add the wasm32-unknown-unknown toolchain
+
+```
+rustup target add wasm32-unknown-unknown
+
+```
+
+Clone the project found [here](https://github.com/zavodil/near-staking-pool-owner)
+
+```
+git clone https://github.com/zavodil/near-staking-pool-owner
+```
+Compile smart contract
+
+```
+cd near-staking-pool-owner/contract
+cargo build --target wasm32-unknown-unknown --release
+```
+
+Deploy smart contract on your owner account. Adjust the path to .wasm file if required.
+```
+NEAR_ENV=shardnet near deploy <OWNER_ID>.shardnet.near --wasmFile target/wasm32-unknown-unknown/release/contract.wasm
+```
+
+![image](https://user-images.githubusercontent.com/28772660/182055331-d49c4543-d8d2-453e-8852-6e927f69aada.png)
+
+
+Initialize the smart contract picking accounts for splitting revenue.
+```
+CONTRACT_ID=<OWNER_ID>.shardnet.near
+
+# Change numerator and denomitor to adjust the % for split.
+NEAR_ENV=shardnet near call $CONTRACT_ID new '{"staking_pool_account_id": "<STAKINGPOOL_ID>.factory.shardnet.near", "owner_id":"<OWNER_ID>.shardnet.near", "reward_receivers": [["<SPLITED_ACCOUNT_ID_1>.shardnet.near", {"numerator": 3, "denominator":10}], ["<SPLITED_ACCOUNT_ID_2>.shardnet.near", {"numerator": 70, "denominator":100}]]}' --accountId $CONTRACT_ID
+```
+
+![image](https://user-images.githubusercontent.com/28772660/182056971-e970e923-3c5b-4b30-83c2-d04bfa256667.png)
+
+
+
 
 Will update here guide if there is anyupdate Challenge
