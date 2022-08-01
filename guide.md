@@ -657,6 +657,14 @@ NEAR_ENV=shardnet near call $CONTRACT_ID new '{"staking_pool_account_id": "<STAK
 
 ![image](https://user-images.githubusercontent.com/28772660/182056971-e970e923-3c5b-4b30-83c2-d04bfa256667.png)
 
+Wait until you start receiving rewards on your node staking pool. Do a withdraw of rewards.
+
+```
+CONTRACT_ID=<OWNER_ID>.shardnet.near
+NEAR_ENV=shardnet near call $CONTRACT_ID withdraw '{}' --accountId $CONTRACT_ID --gas 200000000000000
+```
+
+![image](https://user-images.githubusercontent.com/28772660/182059441-f1345da3-1a50-42ef-a34b-314fa96e1704.png)
 
 
 
